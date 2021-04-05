@@ -1,5 +1,5 @@
 # MenuAPI
-Hey there! This is my MenuAPI API! I created this api because creating menu's that support 1.8.8 - 1.16.5 and pages was a bit difficult for me.
+Hey there! This is my MenuAPI API! I created this api because creating menu's that support 1.8.8 - 1.16.5 was a bit difficult for me.
 I won't go into much detail but, here are some examples on how u can use it: ( It doesn't work with gradle, only maven ) 
 
 First, install it in your pom.xml:
@@ -81,7 +81,7 @@ public class TutorialMenu extends Menu {
 
     @Override
     public void setMenuItems() {
-        setFillerGlass(); // Will set all empty slots with black stained glass! NOTE: It works on 1.8.8 - 1.16.5
+        setFillerGlass(); // Will set all empty slots with black stained glass! NOTE: It works on 1.8.8 - 1.16.5 and its not require to put it in here
         ItemStack tutorial = new ItemStack(Material.GLASS); // If you know how to use XMaterial, you can also use that
         inventory.setItem(0, tutorial); // the inventory is very important, this will allow u to set an item in the gui
     }
@@ -159,4 +159,4 @@ public class TutorialMenu extends Menu {
 
 Outcomes:
 **Without** pages:
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/j43G1I2" data-context="false" ><a href="//imgur.com/a/j43G1I2"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![Uploading nopage.png…]()
