@@ -159,4 +159,5 @@ public class TutorialMenu extends Menu {
 
 Outcomes:
 **Without** pages:
-![Uploading nopage.png…]()
+![nopage](https://user-images.githubusercontent.com/70798725/113622851-cd92b180-965d-11eb-9d74-39f6f35c1330.png)
+
