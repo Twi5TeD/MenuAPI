@@ -12,6 +12,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import vortexcraft.net.menuapi.Utils;
 
 import java.util.Arrays;
 
@@ -46,7 +47,7 @@ public abstract class Menu implements InventoryHolder {
         //The owner of the inventory created is the Menu itself,
         // so we are able to reverse engineer the Menu object from the
         // inventoryHolder in the MenuListener class when handling clicks
-        inventory = Bukkit.createInventory(this, getSlots(), getMenuName());
+        inventory = Bukkit.createInventory(this, getSlots(), Utils.c(getMenuName()));
 
         //grab all the items specified to be used for this menu and add to inventory
         this.setMenuItems();

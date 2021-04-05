@@ -17,13 +17,15 @@ public final class MenuAPI extends JavaPlugin {
     public Menu menu;
     public PaginatedMenu paginatedMenu;
     public PlayerMenuUtility utility;
+
+
     Player p;
+
 
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-        Bukkit.getPluginManager().registerEvents(new MenuListener(), this);
         menu = new Menu(utility) {
             @Override
             public String getMenuName() {
