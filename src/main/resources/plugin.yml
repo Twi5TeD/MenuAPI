@@ -1,0 +1,6 @@
+name: MenuAPI
+version: ${project.version}
+main: vortexcraft.net.menuapi.MenuAPI
+api-version: 1.16
+authors: [ JustReddy ]
+description: MenuAPI cuz im laz
