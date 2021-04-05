@@ -159,4 +159,4 @@ public class TutorialMenu extends Menu {
 
 Outcomes:
 **Without** pages:
-https://imgur.com/a/j43G1I2
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/j43G1I2" data-context="false" ><a href="//imgur.com/a/j43G1I2"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
