@@ -9,11 +9,9 @@ import vortexcraft.net.menuapi.menu.PaginatedMenu;
 import java.util.HashMap;
 
 public final class MenuAPI extends JavaPlugin {
-    private static final HashMap<Player, PlayerMenuUtility> playerMenuUtilityMap = new HashMap<>();
 
     public Menu menu;
     public PaginatedMenu paginatedMenu;
-    public PlayerMenuUtility utility;
 
 
     Player p;
@@ -23,7 +21,7 @@ public final class MenuAPI extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        menu = new Menu(utility) {
+        menu = new Menu() {
             @Override
             public String getMenuName() {
                 return null;
@@ -45,7 +43,7 @@ public final class MenuAPI extends JavaPlugin {
             }
         };
 
-        paginatedMenu = new PaginatedMenu(utility) {
+        paginatedMenu = new PaginatedMenu() {
             @Override
             public String getMenuName() {
                 return null;
@@ -67,7 +65,6 @@ public final class MenuAPI extends JavaPlugin {
             }
         };
 
-        utility = new PlayerMenuUtility(p);
 
 
 
@@ -78,17 +75,5 @@ public final class MenuAPI extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
-    public static PlayerMenuUtility getPlayerMenuUtility(Player p) {
-        PlayerMenuUtility playerMenuUtility;
-        if (!(playerMenuUtilityMap.containsKey(p))) { //See if the player has a playermenuutility "saved" for them
 
-            //This player doesn't. Make one for them add add it to the hashmap
-            playerMenuUtility = new PlayerMenuUtility(p);
-            playerMenuUtilityMap.put(p, playerMenuUtility);
-
-            return playerMenuUtility;
-        } else {
-            return playerMenuUtilityMap.get(p); //Return the object by using the provided player
-        }
-    }
 }

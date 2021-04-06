@@ -7,25 +7,22 @@ package vortexcraft.net.menuapi.menu;
 import com.cryptomorin.xseries.XMaterial;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import vortexcraft.net.menuapi.Utils;
 
 import java.util.Arrays;
 
 public abstract class Menu implements InventoryHolder {
 
-    protected PlayerMenuUtility playerMenuUtility;
     protected Inventory inventory;
     protected ItemStack FILLER_GLASS = XMaterial.BLACK_STAINED_GLASS_PANE.parseItem();
 
 
-    public Menu(PlayerMenuUtility playerMenuUtility) {
-        this.playerMenuUtility = playerMenuUtility;
-    }
+
 
 
     public abstract String getMenuName();
@@ -40,14 +37,14 @@ public abstract class Menu implements InventoryHolder {
     public abstract void setMenuItems();
 
 
-    public void open() {
+    public void open(Player p) {
 
-        inventory = Bukkit.createInventory(this, getSlots(), Utils.c(getMenuName()));
+        inventory = Bukkit.createInventory(this, getSlots(), getMenuName());
 
         this.setMenuItems();
 
 
-        playerMenuUtility.getOwner().openInventory(inventory);
+        p.openInventory(inventory);
     }
 
     //Overridden method from the InventoryHolder interface

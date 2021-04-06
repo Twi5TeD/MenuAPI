@@ -48,6 +48,7 @@ public final class Tutorial extends JavaPlugin {
 ```
 
 To create a menu **whitout** pages you wanna do:
+
 ```java
 import vortexcraft.net;
 
@@ -55,11 +56,9 @@ import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import vortexcraft.net.menuapi.menu.Menu;
-import vortexcraft.net.menuapi.menu.PlayerMenuUtility;
+
 public class TutorialMenu extends Menu {
-    public TutorialMenu(PlayerMenuUtility playerMenuUtility) {
-        super(playerMenuUtility);
-    }
+
 
     @Override
     public String getMenuName() {
@@ -74,7 +73,7 @@ public class TutorialMenu extends Menu {
     @Override
     public void handleMenu(InventoryClickEvent e) {
         // Here u handle the click events, this is why its important to register the MenuListener in the main class
-        if(e.getCurrentItem().getType().equals(Material.GLASS)){
+        if (e.getCurrentItem().getType().equals(Material.GLASS)) {
             e.getWhoClicked().sendMessage("Hey there, this works!");
         }
     }
@@ -106,7 +105,7 @@ public class TutorialCommand implements CommandExecutor {
         if(sender instanceof Player){
             Player p = (Player) sender;
             
-            new TutorialMenu(MenuAPI.getPlayerMenuUtility(p)).open();
+            new TutorialMenu().open(p);
             
         }
         return true;
@@ -115,19 +114,18 @@ public class TutorialCommand implements CommandExecutor {
 ```
 
 To open a menu **inside** a menu you wanna do:
+
 ```java
-import vortexcraft.net
+import org.bukkit.entity.Player;
+import vortexcraft.net;
 
 import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import vortexcraft.net.menuapi.menu.Menu;
-import vortexcraft.net.menuapi.menu.PlayerMenuUtility;
 
 public class TutorialMenu extends Menu {
-    public TutorialMenu(PlayerMenuUtility playerMenuUtility) {
-        super(playerMenuUtility);
-    }
+
 
     @Override
     public String getMenuName() {
@@ -141,10 +139,11 @@ public class TutorialMenu extends Menu {
 
     @Override
     public void handleMenu(InventoryClickEvent e) {
+        Player p = (Player) e.getWhoClicked();
         // Here u handle the click events, this is why its important to register the MenuListener in the main class
-        if(e.getCurrentItem().getType().equals(Material.GLASS)){
+        if (e.getCurrentItem().getType().equals(Material.GLASS)) {
             e.getWhoClicked().sendMessage("Hey there, this works!");
-            new AnotherMenu(playerMenuUtility).open(); // Replace AnotherMenu with any other menu name :)
+            new AnotherMenu().open(p); // Replace AnotherMenu with any other menu name :)
         }
     }
 
@@ -158,6 +157,7 @@ public class TutorialMenu extends Menu {
 ```
 
 Outcomes:
+
 **Without** pages:
 ![nopage](https://user-images.githubusercontent.com/70798725/113622851-cd92b180-965d-11eb-9d74-39f6f35c1330.png)
 
