@@ -1,5 +1,5 @@
 # MenuAPI
-Hey there! This is my MenuAPI API! I created this api because creating menu's that support 1.8.8 - 1.16.5 was a bit difficult for me.
+Hey there! This is my MenuAPI API! with this api you can create menu's that support 1.8.8 - 1.16.5 was a bit difficult for me.
 I won't go into much detail but, here are some examples on how u can use it: ( It doesn't work with gradle, only maven ) 
 
 First, install it in your pom.xml:
