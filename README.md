@@ -15,7 +15,7 @@ First, install it in your pom.xml:
     <dependency>
         <groupId>com.github.JustReddy7397</groupId>
         <artifactId>MenuAPI</artifactId>
-        <version>28d0476628</version>
+        <version>1.2.0</version>
     </dependency>
 </dependencies>
 ```
