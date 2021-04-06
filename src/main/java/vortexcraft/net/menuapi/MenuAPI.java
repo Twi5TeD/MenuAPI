@@ -1,13 +1,10 @@
 package vortexcraft.net.menuapi;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import vortexcraft.net.menuapi.listener.MenuListener;
 import vortexcraft.net.menuapi.menu.Menu;
 import vortexcraft.net.menuapi.menu.PaginatedMenu;
-import vortexcraft.net.menuapi.menu.PlayerMenuUtility;
 
 import java.util.HashMap;
 
